@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}
+Add Worker
+{% endblock %}
+{% block add_worker %}
+<h1> Add worker </h1>
+
+<form action="{% url 'add_worker' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary btn-block">Add worker</button>
+</form>
+{% endblock %}

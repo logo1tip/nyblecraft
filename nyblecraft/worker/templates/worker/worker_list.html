@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+List Workers
+{% endblock %}
+{% block worker_list %}
+{% for item in object_list %}
+{% if request.user.is_authenticated %}
+<div class="card mb-3" style="width: 18rem;">
+    <div class="card-header">
+        <a href="{% url 'worker' item.pk %}" class="btn btn-primary">Worker</a>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Last name: {{ item.last_name }} </li>
+        <li class="list-group-item">First name: {{ item.first_name}} </li>
+        <li class="list-group-item">Patronymic: {{ item.patronymic}} </li>
+        <li class="list-group-item">Department: {{ item.current_department }}</li>
+        <li class="list-group-item">Position: {{ item.current_position }}</li>
+        <li class="list-group-item">Date: {{ item.device_date }}</li>
+    </ul>
+    </div>
+{% endif %}
+{% endfor %}
+{% endblock %}
