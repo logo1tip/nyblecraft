@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+Worker
+{% endblock %}
+{% block worker_detail %}
+<div class="card mb-3" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Last name: {{ object.last_name }}</li>
+        <li class="list-group-item">First name: {{ object.first_name }}</li>
+        <li class="list-group-item">Patronymic: {{ object.patronymic }}</li>
+        <li class="list-group-item">Department: {{ object.current_department }}</li>
+        <li class="list-group-item">Position: {{ object.current_position }}</li>
+        <li class="list-group-item">Date: {{ object.device_date}}</li>
+    </ul>
+    </div>
+{% endblock %}
